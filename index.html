@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Water conservation project</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family:"Poppins", sans-serif;
+			}
+			
+			header{
+				z-index: 999;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 15px 200px;
+				transition: 0.5s ease;				
+			}
+			
+			header .brand{
+				color: #fff;
+				font-size: 1.5em;
+				font-weight: 700;
+				text-transform: uppercase;
+				text-decoration: none;				
+			}
+			
+			header .navigation{
+				position: relative;
+			}
+			
+			header .navigation .navigation-items a{
+				position: relative;
+				color: #fff;
+				font-size: 1em; 
+				font-weight: 500;
+				text-decoration: none;
+				margin-left: 30px;
+				transition:0.3s ease; 
+			}
+			
+			header .navigation .navigation-items a:before{
+				content: '';
+				position: absolute;
+				background: #fff;
+				width: 0;
+				height: 3px;
+				bottom: -4px;
+				left: 0;	
+				transition: 0.3s ease;				
+			}
+			
+			header .navigation .navigation-items a:hover:before{
+				width: 100%;				
+			}
+			
+			section{
+				padding: 100px 200px;
+			}
+			
+			.home{
+				position: relative;
+				width: 100%;
+				min-height: 100vh;
+				display: flex; 
+				justify-content: center;
+				flex-direction: column;
+				background: #2F6B85;
+			}
+			
+			.home:before{
+				z-index: 777;
+				content: '';
+				position: absolute;
+				background: rgba(  60, 63, 64,  0.3);
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				
+			}
+			
+			.home .content{
+				z-index: 888;
+				color: #fff;
+				width: 70%;
+				margin-top: 50px;	
+				display: none;				
+			}
+			
+			.home .content.active{
+				display: block;				
+			}
+			
+			.home .content h1{
+				font-size: 4em;
+				font-weight: 900;
+				text-transform: uppercase;
+				letter-spacing: 5px;
+				line-height: 75px;
+				margin-bottom: 40px;
+			}
+			
+			.home .content h1 span{
+				font-size: 1.2em;
+				font-weight: 600;				
+			}
+			
+			.home .content p{
+				margin-bottom: 65px;	
+				line-height: 27px;				
+			}
+			
+			.home .content a{
+				background: #fff;
+				padding: 15px 35px;
+				color: #0B3C49;
+				font-size: 1.1em;
+				font-weight: 500;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			
+			.home .media-icons{
+				z-index: 888;
+				position: absolute;
+				right: 30px; 
+				display: flex;
+				flex-direction: column;
+				transition: 0.5s ease;
+			}
+			
+			.home .media-icons a{
+				color: #fff;
+				font-size: 1.6em;
+				transition: 0.3s ease;
+			}
+			
+			.home .media-icons a:not(:last-child){
+				margin-bottom: 20px;				
+			}
+			
+			.home .media-icons a:hover{
+				transform: scale(1.3);				
+			}
+			
+			.home video{
+				z-index: 000;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				
+			}
+			
+			.slider-navigation {
+				z-index: 888;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items:center;
+				transform: translateY(80px);
+				margin-bottom: 12px; 				
+			}
+			
+			.slider-navigation .nav-btn{
+				width: 12px;
+				height: 12px;
+				background: #fff;
+				border-radius: 50%;
+				cursor: pointer;
+				box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+				transition: 0.3s ease;
+			}
+			
+			.slider-navigation .nav-btn.active{
+				background: #97BCCD;			
+			}
+			
+			.slider-navigation .nav-btn:not(:last-child){
+				margin-right: 20px;				
+			}
+			
+			.slider-navigation .nav-btn:hover{
+				transform: scale(1.2);
+			}
+			
+			.video-slide{
+				position: absolute;
+				width: 100%;
+				clip-path: circle(0% at 0 50%);
+			}
+			
+			.video-slide.active{
+				clip-path: circle(150% at 0 50%);
+				transition: 2s ease;
+				transition-property: clip-path;
+			}
+			
+			@media (max-width: 1040px){
+				header{
+					padding: 12px 20px;								
+				}	
+				section{
+					padding: 100px 20px;
+				}
+				.home .media-icons{				
+					right: 15px; 					
+				}
+				header .navigation{					
+					display: none;
+									
+				}
+				
+				header .navigation.active{					
+					position: fixed;
+					width: 100%;
+					height: 100vh;
+					top: 0;
+					left: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background: rgba(1, 1, 1, 0.5);					
+				}
+				
+				header .navigation .navigation-items a{
+					color: #222;
+					font-size: 1.2em;
+					margin: 20px;
+				}
+				
+				header .navigation .navigation-items a:before{
+					background: #222;
+					height: 3px;
+					
+				}
+				
+				header .navigation.active .navigation-items{
+					background: #fff;
+					width: 600px;
+					max-width: 600px;
+					margin: 20px;
+					padding: 40px;
+					display: flex; 
+					flex-direction: column;
+					align-items: center;
+					border-radius: 5px;
+					box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+				}
+				
+				.menu-btn{
+					background: url(menu.png)no-repeat;
+					background-size: 30px;
+					background-position: center;
+					width: 40px; 
+					height: 40px; 
+					cursor: pointer;
+					transition: 0.3s ease; 
+				}
+				
+				.menu-btn.active{
+					z-index: 999; 
+					background: url(close.png)no-repeat;
+					background-size: 25px;
+					background-position: center;
+					transition: 0.3s ease; 
+				}
+			}
+			
+		</style>
+	</head>
+	<body>		
+		<header>
+			<a href="#" class="brand">Environmental Organization</a>
+			<div class="menu-btn"></div>			
+			<div class="navigation">
+				<div class="navigation-items">
+					<a href="index.html">Home</a>
+					<a href="About us.html" target="_blank">About us</a>					
+					<a href="Gallery.html" target="_blank">Gallery</a>
+					<a href="Contact Page.html" target="_blank">Contact us</a>
+					<a href="news.html" target="_blank">News</a>					
+				</div>			
+			</div>
+		</header>
+		
+		<section class="home">
+			<video class="video-slide active" src="2.mp4" autoplay muted loop></video>
+			<video class="video-slide" src="1.mp4" autoplay muted loop></video>	
+			<video class="video-slide" src="3.mp4" autoplay muted loop></video>	
+			<div class="content active">
+				<h1>SAVE THE <br><span>WATER</span></h1>
+				<p>Saving water is vital to ensure a sustainable future. It preserves our precious natural resources, reduces energy consumption, and helps mitigate the impacts of water scarcity on communities and ecosystems. Every drop saved contributes to a healthier planet for current and future generations.</p>
+				<a href="#">Read More</a>
+			</div>	
+			<div class="content">
+				<h1>DRYING<br><span>FIELDS</span></h1>
+				<p>Conserving water is crucial to ensure a sustainable future. It safeguards our ecosystems, supports agriculture, and guarantees access to clean drinking water for all. By saving water today, we secure a vital resource for generations to come and protect the environment.</p>
+				<a href="#">Read More</a>
+			</div>
+			<div class="content">
+				<h1>WATER<br><span>POLLUTION</span></h1>
+				<p>Saving water is crucial because it is a finite and essential resource for life on Earth. By conserving water, we ensure its availability for future generations and mitigate the impact of water scarcity, which affects billions of people worldwide. It also helps reduce energy consumption and environmental strain associated with water extraction and treatment.</p>
+				<a href="#">Read More</a>
+			</div>
+			<div class="media-icons">	
+				<a href="https://www.instagram.com/water_resources_kazakhstan/"><i class="fab fa-instagram"></i></a>
+				<a href="https://api.whatsapp.com/send?phone=77767270405" target="_blank"><i class="fab fa-whatsapp"></i></a>
+			</div>
+			
+			<div class="slider-navigation">
+				<div class="nav-btn active"></div>
+				<div class="nav-btn"></div>
+				<div class="nav-btn"></div>
+				
+			</div>
+		</section>
+		<script type="text/javascript">
+			const menuBtn = document.querySelector(".menu-btn");
+			const navigation = document.querySelector(".navigation");
+			
+			menuBtn.addEventListener("click", () => {
+				menuBtn.classList.toggle("active");
+				navigation.classList.toggle("active");
+			});
+
+			const btns = document.querySelectorAll(".nav-btn");
+			const slides = document.querySelectorAll(".video-slide");
+			const contents = document.querySelectorAll(".content");
+			
+			var sliderNav = function(manual){
+				btns.forEach((btn) => {
+					btn.classList.remove("active");
+				});
+				
+				slides.forEach((slide) => {
+					slide.classList.remove("active");
+				});
+				
+				contents.forEach((content) => {
+					content.classList.remove("active");
+				});
+				
+				btns[manual].classList.add("active");
+				slides[manual].classList.add("active");
+				contents[manual].classList.add("active");
+			}
+			
+			btns.forEach((btn, i) => {
+				btn.addEventListener("click", () => {
+					sliderNav(i);
+				});
+			});
+		</script>
+		
+	</body>
+</html>
