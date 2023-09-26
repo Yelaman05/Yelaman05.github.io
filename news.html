@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>News</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			* {
+				box-sizing: border-box;	
+				font-family:"Poppins", sans-serif;
+			}
+
+			/* Style the body */
+			body, html {
+				font-family: "Poppins", sans-serif;
+				margin: 0;
+				height: 100%;
+				background: #f1f1f1;
+
+			}
+			@keyframes example{
+				0%{background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(piron-guillaume-U4FyCp3-KzY-unsplash.jpg);}
+				25%{background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(piron-guillaume-y5hQCIn1c6o-unsplash.jpg);}
+				50%{background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(thisisengineering-raeng-JzdrZzZ50tA-unsplash.jpg);}
+				75%{background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(walter-otto-PT70CT6mATQ-unsplash.jpg);}
+				100%{background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(national-cancer-institute-NNpo-liY5aU-unsplash.jpg);}
+			}
+			section{
+				padding: 100px 200px;
+			}
+
+			/* Header/logo Title */
+			
+			header{
+				z-index: 999;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 15px 200px;
+				transition: 0.5s ease;				
+			}
+			
+			header .brand{
+				color: #fff;
+				font-size: 2em;
+				font-weight: 700;
+				text-transform: uppercase;
+				text-decoration: none;	
+				margin-left: 530px;
+								
+			}
+			
+			.home {
+				position: relative;
+				width: 100%;
+				min-height: 100vh;
+				display: flex; 
+				justify-content: center;
+				flex-direction: column;
+				background: #2F6B85;
+			}
+
+			.home:before{
+				z-index: 777;
+				content: '';
+				position: absolute;
+				background: rgba(  60, 63, 64,  0.3);
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			.home .content{
+				z-index: 888;
+				color: #fff;
+				width: 57%;
+				margin-left: 650px;	
+				margin-bottom: 40px;
+			}
+
+			.home .content h1{
+				font-size: 4em;
+				font-weight: 900;
+				text-transform: uppercase;
+				letter-spacing: 5px;
+				line-height: 75px;
+				margin-bottom: 25px;
+			}
+
+			.home .content p{
+				margin-top: 1px;				
+			}
+			
+			.home .content a{
+				background: #000;
+				padding: 15px 50px;
+				color:  #fff;
+				font-size: 1.1em;
+				font-weight: 500;
+				text-decoration: none;
+				border-radius: 5px;
+							
+			}
+			
+			.home video{
+				z-index: 000;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;				
+			}
+			
+			.home .content h1 span{
+				font-size: 1.2em;
+				font-weight: 600;				
+			}
+			
+			.home .content p{
+				margin-bottom: 10px;				
+			}
+			
+			.home .content h5{
+				margin-bottom: 10px;				
+			}
+
+			/* Style the top navigation bar */
+			.navbar {
+				overflow: hidden;
+				background-color: #333;
+			}
+
+			/* Style the navigation bar links */
+			.navbar a {
+				float: left;
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 20px;
+				text-decoration: none;
+			}
+
+			/* Right-aligned link */
+			.navbar a.right {
+				float: right;
+			}
+
+			.navbar .nav-items a.rigth:before{
+				content: '';
+				position: absolute;
+				background: #fff;
+				width: 0;
+				height: 3px;
+				bottom: -4px;
+				left: 0;	
+				transition: 0.3s ease;				
+			}
+			
+			.navbar .nav-items a.right:hover:before{
+				width: 100%;				
+			}
+
+			
+			.leftcolumn {   
+				float: left;
+				width: 75%;
+			}
+
+			.rightcolumn {
+				float: left;
+				width: 25%;
+				background-color: #f1f1f1;
+				padding-left: 20px;
+			}
+
+
+			.fakeimg {
+				background-color: #aaa;
+				width: 60%;
+  
+			}	
+			.card {
+				background-color: white;
+				padding: 20px;
+				margin-top: 20px;
+			}
+
+
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+
+			.tabcontent {
+				color: white;
+				display: none;
+				padding: 10px 20px;
+				height: 100%;
+			}
+			
+			.stuff{
+				padding:15px;
+				margin-left: 200px;
+	
+			}
+			.sign {
+				float:left;
+				border: 1px solid #333; 
+				padding: 7px; 
+				margin: 10px 0 5px 5px; 
+				background: #555; 
+			}
+			.sign figcaption {
+				margin: 10px auto 5px; 
+			}
+			.butt{
+				width:150px;
+				padding:12px 0;
+				text-align:center;
+				margin:10px 45px;
+				border-radius:10px;
+				font-weight:bold;
+				border:2px solid #fc3;
+				background:#fc3;
+				color:black;
+				cursor:pointer;
+				opacity: 0.5;
+				transition: 0.3s;
+				display: inline-block;
+			}
+			.butt:hover {opacity: 1}
+
+			#maket {
+				width: 100%; 
+			}
+			td{
+				vertical-align: top; 
+				padding: 5px; 
+			}
+			td#leftcol {
+				width: 30px; 
+				background: #ccc; 
+				border-right: 1px solid #000; 
+			}
+			td#rightcol {
+				background: #fc3; 
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			.zoom {
+				padding: 50px;
+				transition: transform .2s;
+				width: 300px;
+				height: 140px;
+				margin: 0 auto;
+			}
+
+			.zoom:hover {
+				transform: scale(1.5); 
+			}
+
+			.flip-box {
+				background-color: transparent;
+				width: 300px;
+				height: 200px;
+				border: 1px solid #f1f1f1;
+				perspective: 1000px;
+			}
+
+			.flip-box-inner {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				transition: transform 0.8s;
+				transform-style: preserve-3d;
+			}
+
+			.flip-box:hover .flip-box-inner {
+				transform: rotateY(180deg);
+			}
+
+			.flip-box-front, .flip-box-back {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+
+			.flip-box-front {
+				background-color: #bbb;
+				color: black;
+			}
+
+			.flip-box-back {
+				background-color:#EEE8AA;
+				color: black;
+				transform: rotateY(180deg);
+			}
+
+			.flip-box1 {
+				background-color: transparent;
+				width: 300px;
+				height: 200px;
+				border: 1px solid #f1f1f1;
+				perspective: 1000px;
+			}
+
+			.flip-box-inner1 {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				transition: transform 0.8s;
+				transform-style: preserve-3d;
+			}
+
+			.flip-box1:hover .flip-box-inner1 {
+				transform: rotateX(180deg);
+			}
+
+			.flip-box-front1, .flip-box-back1 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+
+			.flip-box-front1 {
+				background-color: #bbb;
+				color: black;
+			}
+
+			.flip-box-back1 {
+				background-color: #FFA07A;
+				color: white;
+				transform: rotateX(180deg);
+			}	
+
+			.flip-box2 {
+				background-color: transparent;
+				width: 300px;
+				height: 200px;
+				border: 1px solid #f1f1f1;
+				perspective: 1000px;
+			}
+
+			.flip-box-inner2 {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				transition: transform 0.8s;
+				transform-style: preserve-3d;
+			}
+
+			.flip-box2:hover .flip-box-inner2 {
+				transform: rotateY(180deg);
+			}
+
+			.flip-box-front2, .flip-box-back2 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+			}
+
+			.flip-box-front2 {
+				background-color: #bbb;
+				color: black;
+			}
+
+			.flip-box-back2 {
+			background-color: #BDB76B;
+			color: white;
+			transform: rotateY(180deg);
+			}
+
+			.chip {
+				display: inline-block;
+				padding: 0 25px;
+				height: 50px;
+				font-size: 18px;
+				color: black;
+				line-height: 50px;
+				border-radius: 25px;
+				background-color: #f1f1f1;
+			}		
+
+			.chip img {
+				float: left;
+				margin: 0 10px 0 -25px;
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+			}
+
+
+			/* Footer */
+			footer{
+				background: #252525;
+				color: #f3f3f3;
+				padding: 30px;
+			}
+
+			footer h2{
+				padding: 10px 0;
+			}
+
+			footer p{
+				padding: 10px 0;
+				line-height: 1.3;
+			}
+
+			.footer-left, 
+			.footer-right{
+				margin: 0 20px;
+			}
+
+			footer > p{
+				text-align: center;
+				opacity: 0.8;
+				margin-top: 20px;
+			}
+
+			.footer-right i{
+				font-size: 1.8rem;
+				color: #808080;
+			}
+
+			.footer-right input{
+				font-size: 18px;
+				border: none;
+				background: transparent;
+				outline: none;
+				color: #808080;
+				padding-right: 10px;
+				width: 100%;
+			}
+
+			.footer-right div{
+				display: flex;
+				align-items: center;
+				justify-content: start;
+				width: 200px;
+				padding: 10px 0;
+				border-bottom: 1.6px solid #808080;
+			}
+			
+			
+			.footer-container .footer-left .contact2 {
+				z-index: 888;
+				position: absolute;				
+				display: flex;
+				flex-direction: column;
+				transition: 0.5s ease;
+			}
+			
+			.footer-container .footer-left .social {
+				z-index: 888;
+							
+				display: flex;				
+				transition: 0.5s ease;
+			}
+			
+			.footer-container .footer-left .social{
+				color: #fff;
+				font-size: 1.6em;
+				transition: 0.3s ease;
+			}
+			
+			.footer-container .footer-left .social:not(:last-child){
+				margin-bottom: 100px;				
+			}
+			
+			.home .media-icons a:hover{
+				transform: scale(1.3);				
+			}
+
+
+			/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 700px) {
+				.row {   
+					flex-direction: column;
+				}
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+				.navbar a {
+					float: none;
+					width: 100%;
+				}
+			}
+			
+			@media (max-width: 1040px){
+				section{
+					padding: 100px 20px;
+				}
+			}
+			
+			@media(min-width: 800px){
+				.footer-container{
+					display: flex;
+				}
+
+				.footer-right,
+				.footer-left{
+					flex: 1;
+				}
+			}
+			
+			@media screen and (max-width: 800px) {
+				.leftcolumn, .rightcolumn {   
+					width: 100%;
+					padding: 0;
+				}
+			}
+
+
+			@media screen and (max-width: 400px) {
+				.topnav a {
+					float: none;
+					width: 100%;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="#" class="brand">BIG4</a>
+		</header>
+		<section class="home">
+			<video class="video-slide active" src="4.mp4" autoplay muted loop></video>
+			<div class="content">
+				<h1>THE <br><span>NEWS</span></h1>
+				<p><b>Exploring Water Conservation and Challenges in Kazakhstan</b></p>
+				<h5>Welcome to our dedicated platform for all things related to water conservation and the pressing issues surrounding water resources in Kazakhstan. In a world where water scarcity is becoming an increasingly critical concern, our mission is to shed light on the unique challenges and initiatives in this vast Central Asian nation.</h5>
+				<br><br><a href="#">Read More</a>
+			</div>	
+		</section>
+
+		<div class="navbar">
+			<div class="nav-items">				
+				<a href="index.html" class="right">Home</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn">    
+				<div class="card">
+					<h2 style="color:black;"><big>The water resources of Kazakhstan.</big></h2>
+					<h5 style="color:black;">25 September 2023, 10:05 | Oljas Ibraev </h5>
+						<div class="fakeimg" style="height:360px; background-image: url(1st.jpeg); background-repeat: no-repeat;background-size: cover;"></div>
+							<p style="color:black">Водные ресурсы и проблемы</p>
+							<p style="color:black">Согласно данным Всемирной Метеорологической Организации, Казахстан будет ощущать
+													большие изменения климата в течении 21 века. Засуха, лесные пожары, обмеление рек станут
+													обычным явлением в нашей стране. За этими определениями природных катастроф скрывается
+													большие проблемы для нашего народа. Какими могут быть последствия от этих катастроф?</p>
+							<a href="Article_1.html" style="color:#FA8072">Read more ></a>	 
+				</div>
+	
+				<div class="card">
+					<h2 style="color:black;"><big>Will the new Water Code help to cope with the shortage of water resources in Kazakhstan?</big></h2>
+					<h5 style="color:black;">25 September 2023, 11:25 | Almas Kaisar, Irina Gumyrkina</h5>
+						<div class="fakeimg" style="height:360px; background-image:url(2nd.jpg);  background-repeat: no-repeat;background-size:cover;"></div>
+					<p style="color:black">Действующий в Казахстане Водный кодекс был принят 20 лет назад – в 2003 году. За это время в него вносились правки более 70 раз. Министерство экологии и природных ресурсов считает, что он не отвечает требованиям времени, так как водные ресурсы в нем рассматриваются с точки зрения экономической выгоды, а вопросы водной безопасности и водосбережения не учитываются.
+В прошлом году президент страны поручил разработать новый Водный кодекс. Ожидалось, что проект кодекса будет внесен в парламент в первом полугодии 2023 года, однако документ по-прежнему находится на обсуждении.
+Власть поговорила с экспертами о том, сможет ли принятие нового кодекса изменить подходы к водной безопасности и водным ресурсам страны.</p>
+					<p style="color:black">Международный эксперт по управлению водными ресурсами и изменению климата, координатор Центрально-Азиатской платформы по водным ресурсам Булат Есекин считает...</p>
+					<a href="Article_2.html" style="color:#FA8072">Read more > </a>	 
+				</div>
+	
+				<div class="card">
+					<h2 style="color:black;"><big>How to increase irrigated land and save water in Kazakhstan?</big></h2>
+					<h5 style="color:black;">25 September 2023, 11:42 | Zhanbolat Mamyshev</h5>
+						<div class="fakeimg" style="height:360px; background-image:url(3rd.jpg);  background-repeat: no-repeat;background-size:cover;"></div>
+							<p style="color:black">Рассказываем о предложении министерства экологии, геологии и природных ресурсов
+В 2020 году в Казахстане было 1,5 млн га орошаемых земель. За десять лет, к 2030 году, их должно стать в два раза больше – 3 млн га.  </p>
+							<p style="color:black">Задачу поставил президент Токаев в своем первом послании в сентябре 2019 года.</p>
+							<p style="color:black">«Мы имеем значительный потенциал для производства органической и экологически чистой продукции, востребованной не только в стране, но и за рубежом. Мы должны поэтапно увеличить количество орошаемых земель до 3 млн га к 2030 году», – сказал глава государства.  </p>
+							<a href="Article_3.html" style="color:#FA8072">Read more > </a>	 
+				</div>
+	
+			</div>
+
+			<div class="rightcolumn">
+				<div class="card">
+					<h2 style="color:black;">Interesting facts</h2>
+						<div class="zoom" style="height:140px;  background-image:url(right_1.jpg); background-repeat: no-repeat;background-size:cover; border-radius:20px;"></div>
+						<p style="color:black;"><center><b>More than 2 billion people worldwide lack access to clean and safe drinking water sources.</b></center></p>
+    
+						<div class="zoom" style="height:140px;  background-image:url(right_2.jpg); background-repeat: no-repeat;background-size:cover; border-radius:20px;"></div>
+						<p style="color:black;"><center><b>Over 30 countries are currently experiencing high or extremely high water stress, meaning they consume much of their available water resources.</b></center></p>
+    
+
+						<div class="zoom" style="height:140px;  background-image:url(right_3.jpg); background-repeat: no-repeat;background-size:cover; border-radius:20px;"></div>
+						<p style="color:black;"><center><b>As the global population continues to grow, water demand is projected to increase by 55% by 2050.</b></center></p>
+				</div>
+	
+	
+				<div class="card">
+					<h3 style="color:black;">Popular Posts</h3>
+						<div class="flip-box">
+							<div class="flip-box-inner">   
+								<div class="flip-box-front" style="height:200px;  background-image:url(right_1_1.jpg); background-repeat: no-repeat;background-size:cover;">
+								</div>
+								<div class="flip-box-back">
+									<h3 style="padding-top:35px ;font:italic 25px bold "Times New Roman", Times, serif">Will the new Water Code help to cope with the shortage of water resources in Kazakhstan?</h3>
+								</div>
+							</div>
+						</div>
+						<p>
+						<div class="flip-box1">
+							<div class="flip-box-inner1">
+								<div class="flip-box-front1" style="height:200px;  background-image:url(right_2_2.jpg); background-repeat: no-repeat;background-size:cover;">
+								</div>
+							<div class="flip-box-back1">
+								<h3 style="padding-top:35px ;font:italic 25px bold "Times New Roman", Times, serif">Kazakhstan plans to develop a water resources management system</h3>
+							</div>
+							</div>
+						</div>
+						<p>
+						<div class="flip-box2">
+							<div class="flip-box-inner2">
+							<div class="flip-box-front2" style="height:200px;  background-image:url(right_3_3.jpg); background-repeat: no-repeat;background-size:cover;">
+							</div>
+							<div class="flip-box-back2">
+								<h3 style="padding-top:35px ;font:italic 25px bold "Times New Roman", Times, serif">What is the situation with water resources in Kazakhstan?</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="card">
+					<div class="chip">
+						<img src="ava.jpg" alt="Person" width="96" height="96">
+						Akhlassov Yelaman 
+					</div>
+				</div>
+				
+	
+  </div>
+</div>
+
+		
+
+		<script type="text/javascript">
+	
+			const slides = document.querySelectorAll(".video-slide");
+			var sliderNav = function(manual){
+				slides.forEach((slide) => {
+					slide.classList.remove("active");
+				});
+
+				slides[manual].classList.add("active");
+			}		
+			
+		</script>	
+		
+		<footer>
+            <div class = "footer-container">
+                <div class = "footer-left">
+                    <h2>NEWS</h2>
+                    <p>Welcome to our dedicated platform for all things related to water conservation and the pressing issues surrounding water resources in Kazakhstan. In a world where water scarcity is becoming an increasingly critical concern, our mission is to shed light on the unique challenges and initiatives in this vast Central Asian nation.</p>
+					
+					<div class="contact2">
+						<span><i class ="fa fa-phone"></i> &nbsp; +7(777)-777-77-77</span><br>
+						<span><i class ="fa fa-envelope"></i> &nbsp; BIG4@environment.kz</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="social">
+						<a href ="https://www.whatsapp.com/"><i class ="fa fa-whatsapp" style="width:40px"></i></a>
+						<a href="https://www.instagram.com/water_resources_kazakhstan/" target="_blank"><i class ="fa fa-instagram" style="width:40px"></i></a>								
+						<a href ="https://www.youtube.com/"><i class ="fa fa-youtube" style="width:40px"></i></a>
+					</div>
+					
+				</div>
+
+                <div class = "footer-right">
+                    <h2>Newletter</h2>
+                    <p>Feel free to reach out to us at your convenience, whether you have questions, comments, or news to share. We're here to assist you and welcome your valuable input.</p>
+    
+                </div>
+            </div>
+
+            <p>Copyright &copy; 2023 All rights reserved | BIG4</p>
+        </footer>
+	
+	</body>
+</html>
