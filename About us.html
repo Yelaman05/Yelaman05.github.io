@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.banner {
+   width:100%;
+   height:100vh;
+   background-size:cover;
+   background-position:center;
+   animation-name: example;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
+   animation-timing-function:  ease-in-out;
+   background-image: url(right_2_2.jpg);
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px; 
+  border-radius: 5px;
+}
+
+.about-section {
+  padding: 270px;
+  text-align: center; 
+  color: white;  
+font-size: 18px;
+color: white;
+text-align: justify;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 15px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="banner">   
+	 <section id="B1">
+       <div class ="content">
+         <div class="about-section">
+			<h2><center><b>About Us</b><center></h2>
+			<p>We are a dedicated team committed to making a positive impact on our world. Our mission is to address the critical issue of water scarcity by promoting awareness, implementing sustainable practices, and fostering a culture of responsible water use. Through education, advocacy, and innovative solutions, we work tirelessly to ensure a water-secure future for all</p>
+		</div>
+	</div>
+		  
+</div>
+	 </section>
+
+
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="1st_member.jpeg" alt="Jane" style="width:100%;">
+      <div class="container">
+        <h2>Zhanel Sergaliyeva</h2>
+        <p class="title">Content maker</p>
+        <p>"Who we are? The name "BIG 4" represents our collective excellence and highlights our commitment to delivering exceptional results. Our team is characterized by a strong sense of respect and accountability".</p>
+        <br>
+		<br>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="2nd_member.jpeg" alt="Mike" style="width:100%;">
+      <div class="container">
+        <h2>Dinara Tulepbergenova</h2>
+        <p class="title">Content maker</p>
+        <p>"Our mission is to safeguard and sustainably manage water resources, fostering a culture of responsible water use to secure a vibrant, water-secure future for all".</p>
+        
+		<br>
+		<br>
+		<br>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="3rd_member.jpeg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Olzhas Ibraev</h2>
+        <p class="title">Scrum-master</p>
+        <p>"Our vision is a world where clean, abundant water is a reality for every community, where ecosystems thrive, and where the global community works together to address water scarcity and ensure equitable access to this vital resource".</p>
+		<br>
+	   <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="column">
+    <div class="card">
+      <img src="4th_member.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Yelaman Akhlassov</h2>
+        <p class="title">Developer</p>
+        <p>"Our goal is to actively engage communities, businesses, and governments in water conservation efforts, promote awareness and education, and implement sustainable water management practices to combat water scarcity,and improve the quality of life".</p>
+        <br>
+		<p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
